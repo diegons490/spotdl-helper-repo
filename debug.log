@@ -1,0 +1,33 @@
+Script iniciado em 2025-09-18 11:46:58-03:00 [COMMAND="bash "/mnt/ARQUIVOS/Github/spotdl-helper/main.sh"" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="116" LINES="50"]
+[H[2J[3J
+[96m[1m===========================================(B[m
+[96m[1m   Atualizar SpotDL   (B[m
+[96m[1m===========================================(B[m
+
+[97m[42m[1m ✔ (B[m[92m spotDL já está atualizado. Versão: 4.4.2(B[m
+
+[92m[1mPressione Enter para continuar...(B[m
+[H[2J[3J
+[96m[1m===========================================(B[m
+[96m[1m   SPOTDL DOWNLOAD MANAGER   (B[m
+[96m[1m===========================================(B[m
+
+[93m[1m1(B[m) [97mBaixar músicas/albuns(B[m
+[93m[1m2(B[m) [97mBaixar playlists(B[m
+[93m[1m3(B[m) [97mBaixar album do artista(B[m
+[93m[1m4(B[m) [97mSincronizar músicas(B[m
+[93m[1m5(B[m) [97mConfigurações(B[m
+[93m[1m6(B[m) [97mGerenciar SpotDL(B[m
+
+[93m[1m0(B[m) [97mSair(B[m
+[92m[1m
+Escolha uma opção: (B[m0
+
+[97m[44m[1m i (B[m[94m Saindo...(B[m
+
+Script concluído em 2025-09-18 11:47:04-03:00 [COMMAND_EXIT_CODE="0"]
+################################################################################
+####### FIM DA EXECUÇÃO: 2025-09-18 11:47:04 #######
+# SAÍDA: 0
+################################################################################
+

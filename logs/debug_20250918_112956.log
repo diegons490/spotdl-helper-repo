@@ -1,0 +1,18 @@
+Script iniciado em 2025-09-18 11:29:28-03:00 [COMMAND="bash "/mnt/ARQUIVOS/Github/spotdl-helper/modules/formatting/fmt_test.sh"" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="116" LINES="50"]
+[H[2J[3J
+[96m[1m===========================================(B[m
+[96m[1m   TESTES DE FORMATAÇÃO   (B[m
+[96m[1m===========================================(B[m
+
+[96m[1](B[m [97m1. Demo Completa(B[m
+[96m[2](B[m [97m2. Teste Interativo(B[m
+[96m[3](B[m [97m3. Testes Rápidos(B[m
+[96m[4](B[m [97m0. Sair(B[m
+[92m[1mSelecione uma opção: (B[m0
+
+Script concluído em 2025-09-18 11:29:31-03:00 [COMMAND_EXIT_CODE="0"]
+################################################################################
+####### FIM DA EXECUÇÃO: 2025-09-18 11:29:31 #######
+# SAÍDA: 0
+################################################################################
+
