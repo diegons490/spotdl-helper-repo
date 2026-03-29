@@ -29,20 +29,7 @@ SpotDL Helper is a **command-line (CLI) frontend** that makes using spotDL easie
 ---
 ## 🛠️ How to Install
 
-### Recommended: Install via terminal (one-liner)
-
-You can install SpotDL Helper directly from the terminal using the official installation script hosted on GitHub:
-
-### With curl:
-```bash
-curl -fsSL https://raw.githubusercontent.com/diegons490/spotdl-helper-repo/main/install.sh | bash
-```
-### Or with wget:
-```
-wget -qO- https://raw.githubusercontent.com/diegons490/spotdl-helper-repo/main/install.sh | bash
-```
-### Alternative: Manual installation from GitHub repository:
-##### If you prefer, you can clone the repository and run the installer script manually:
+### Recommended: Install via terminal
 ```
 git clone https://github.com/diegons490/spotdl-helper-repo
 cd spotdl-helper
