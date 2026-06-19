@@ -3,6 +3,7 @@
 # Verificação de dependências
 
 # Função principal para verificar dependências
+export PATH="$HOME/.local/bin:$PATH"
 check_dependencies() {
     local dependencies=("ffmpeg" "jq" "spotdl")
     local missing=()
