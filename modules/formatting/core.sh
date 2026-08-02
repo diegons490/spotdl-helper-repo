@@ -2,8 +2,6 @@
 # modules/formatting/core.sh
 # Função Principal de Formatação
 
-source "$(dirname "${BASH_SOURCE[0]}")/colors.sh"
-
 # Aplica formatação usando `tput` (terminfo) para cores e estilos,
 # com suporte opcional a ícones (símbolos ou emoji).
 #
@@ -96,64 +94,64 @@ source "$(dirname "${BASH_SOURCE[0]}")/colors.sh"
 #   ■ □ ▢ ▣ ▤ ▥ ▦ ▧ ▨ ▩ ◆ ◇ ◈ ◉ ◎ ◍
 #
 format_text() {
-	local text="$1"
-	shift
-	local pre="" post="$(tput sgr0)"
-	local icon=""
+    local text="$1"
+    shift
+    local pre="" post="$(tput sgr0)"
+    local icon=""
 
-	while [[ $# -gt 0 ]]; do
-		case "$1" in
-		# foreground
-		black | red | green | yellow | blue | magenta | cyan | white | bright_*)
-			pre+=$(get_fg_color "$1")
-			;;
-		# background (usa prefixo bg_)
-		bg_*)
-			pre+=$(get_bg_color "${1#bg_}")
-			;;
-		# estilos
-		bold | dim | underline | reverse | blink | reset)
-			pre+=$(get_style "$1")
-			;;
-		# se não for cor/estilo, é ícone
-		*)
-			icon="$1"
-			;;
-		esac
-		shift
-	done
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+        # foreground
+        black | red | green | yellow | blue | magenta | cyan | white | bright_*)
+            pre+=$(get_fg_color "$1")
+            ;;
+        # background (usa prefixo bg_)
+        bg_*)
+            pre+=$(get_bg_color "${1#bg_}")
+            ;;
+        # estilos
+        bold | dim | underline | reverse | blink | reset)
+            pre+=$(get_style "$1")
+            ;;
+        # se não for cor/estilo, é ícone
+        *)
+            icon="$1"
+            ;;
+        esac
+        shift
+    done
 
-	if [[ -n "$icon" ]]; then
-		printf "%b%s %s%b" "$pre" "$icon" "$text" "$post"
-	else
-		printf "%b%s%b" "$pre" "$text" "$post"
-	fi
+    if [[ -n "$icon" ]]; then
+        printf "%b%s %s%b" "$pre" "$icon" "$text" "$post"
+    else
+        printf "%b%s%b" "$pre" "$text" "$post"
+    fi
 }
 
 # Variante do format_text sem reset no final
 format_text_norestore() {
-	local text="$1"
-	shift
-	local pre="" post=""
-	local icon=""
+    local text="$1"
+    shift
+    local pre="" post=""
+    local icon=""
 
-	while [[ $# -gt 0 ]]; do
-		case "$1" in
-		black | red | green | yellow | blue | magenta | cyan | white | bright_*)
-			pre+=$(get_fg_color "$1")
-			;;
-		bg_*) pre+=$(get_bg_color "${1#bg_}") ;;
-		bold | dim | underline | reverse | blink | reset) pre+=$(get_style "$1") ;;
-		*) icon="$1" ;;
-		esac
-		shift
-	done
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+        black | red | green | yellow | blue | magenta | cyan | white | bright_*)
+            pre+=$(get_fg_color "$1")
+            ;;
+        bg_*) pre+=$(get_bg_color "${1#bg_}") ;;
+        bold | dim | underline | reverse | blink | reset) pre+=$(get_style "$1") ;;
+        *) icon="$1" ;;
+        esac
+        shift
+    done
 
-	if [[ -n "$icon" ]]; then
-		printf "%b%s %s" "$pre" "$icon" "$text"
-	else
-		printf "%b%s" "$pre" "$text"
-	fi
+    if [[ -n "$icon" ]]; then
+        printf "%b%s %s" "$pre" "$icon" "$text"
+    else
+        printf "%b%s" "$pre" "$text"
+    fi
 }
 
 # Quebras de linha
@@ -163,10 +161,10 @@ format_text_norestore() {
 #   newline 2
 #   # Saída: duas quebras de linha
 newline() {
-	local count="${1:-1}"
-	for ((i = 0; i < count; i++)); do
-		printf "\n"
-	done
+    local count="${1:-1}"
+    for ((i = 0; i < count; i++)); do
+        printf "\n"
+    done
 }
 
 # =========================
@@ -191,20 +189,20 @@ newline() {
 #       "Operation completed" white "" underline
 
 multi_format_line() {
-	local output=""
+    local output=""
 
-	while [[ $# -gt 0 ]]; do
-		local txt="$1"
-		local fg="${2:-}"
-		local bg="${3:-}"
-		local st="${4:-}"
+    while [[ $# -gt 0 ]]; do
+        local txt="$1"
+        local fg="${2:-}"
+        local bg="${3:-}"
+        local st="${4:-}"
 
-		# Aplica formatação usando format_text
-		output+=$(format_text "$txt" "$fg" "bg_$bg" "$st")
+        # Aplica formatação usando format_text
+        output+=$(format_text "$txt" "$fg" "bg_$bg" "$st")
 
-		# Avança para o próximo grupo
-		shift 4 || break
-	done
+        # Avança para o próximo grupo
+        shift 4 || break
+    done
 
-	printf "%b\n" "$output"
+    printf "%b\n" "$output"
 }
